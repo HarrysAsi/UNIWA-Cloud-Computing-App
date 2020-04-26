@@ -1,0 +1,36 @@
+{% extends "cloud/base.html" %}
+{% load static i18n %}
+{% block content %}
+
+<div class="container">
+    {% if not subjects %}
+    <div class="text-center">
+        <h2> There are no available subjects yet! </h2>
+    </div>
+    {% else %}
+    <div class="row">
+        <div class="widget">
+            <div class="widget-header mt-3"><i class="icon-bookmark"></i>
+                <h3>Choose a subject</h3>
+            </div>
+            <!-- /widget-header -->
+            <div class="widget-content">
+                <div class="shortcuts">
+                    {% for subject in subjects %}
+                    <a href="{% url 'subject' subject.pk %}" class="shortcut">
+                        <img src="{{subject.image.url}}"
+                             style="height: 150px; width: 150px;" alt="image"/>
+                        <span class="shortcut-label"><h3>{{subject.title_en}}</h3></span> </a>
+                    {% endfor %}
+                </div>
+                <!-- /shortcuts -->
+            </div>
+            <!-- /widget-content -->
+        </div>
+        <!-- /span6 -->
+        {% endif %}
+    </div>
+    <!-- /row -->
+</div>
+
+{% endblock %}

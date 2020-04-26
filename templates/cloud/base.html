@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static i18n %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Cloud</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    {% include 'cloud/css.html' %}
+    <![endif]-->
+    {% block extra_css %}
+
+    {% endblock %}
+</head>
+<body>
+
+<!--Navbar-->
+{% include 'cloud/navbar.html' %}
+
+<!--Messages-->
+{% include 'cloud/message_handler.html' %}
+
+<!--Main block-->
+{% block content %}
+
+{% endblock %}
+<!--End of main Block-->
+
+<!--footer-->
+{% include 'cloud/footer.html' %}
+
+<!--All js files-->
+{% include 'cloud/js.html'%}
+
+<!--Extra js files for each page -->
+{% block extra_javascript %} {% endblock %}
+
+</body>
+</html>

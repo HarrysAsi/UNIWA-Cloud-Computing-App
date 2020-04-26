@@ -1,0 +1,19 @@
+{% load i18n %}
+{% if request.user.is_authenticated %}
+<div class="subnavbar">
+    <div class="subnavbar-inner">
+        <div class="container">
+            <ul class="mainnav">
+
+                <li class="{% if navbar_active == 'main_event' %}active{% endif %}"><a href="{% url 'main_event' selected_year %}"><i class="icon-calendar"></i><span>{% trans 'Main Event' %}</span> </a></li>
+                <li class="{% if navbar_active == 'pre_event' %}active{% endif %}"><a href="{% url 'pre_event' selected_year %}"><i class="icon-list-alt"></i><span>{% trans 'Pre Event' %}</span> </a></li>
+                <li class="{% if navbar_active == 'volunteer' %}active{% endif %}"><a href="{% url 'volunteer' selected_year %}"><i class="icon-list-alt"></i><span>{% trans 'Volunteers' %}</span> </a></li>
+
+            </ul>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /subnavbar-inner -->
+</div>
+<!-- /subnavbar -->
+{% endif %}

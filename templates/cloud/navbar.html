@@ -1,0 +1,35 @@
+{% load static i18n %}
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a
+                class="brand" href="{% url 'login' %}">University Of West Attica - Exercises Panel</a>
+            {% if request.user.is_authenticated %}
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-cog"></i> Account <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+<!--                            <li><a href="javascript:;">Settings</a></li>-->
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a href="{% url 'main' %}" class="dropdown-toggle" data-toggle="dropdown">
+                            Home
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+            <!--/.nav-collapse -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /navbar-inner -->
+</div>
+<!-- /navbar -->
