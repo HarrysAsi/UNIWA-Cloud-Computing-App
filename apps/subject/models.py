@@ -71,6 +71,7 @@ class SubjectExercise(models.Model):
         verbose_name_plural = _("subject_exercise's")
 
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    title = models.CharField(_("exercise Title"), max_length=128, blank=False)
     file = models.FileField(verbose_name=_("file"), upload_to=create_file_upload_path, blank=True,
                             null=False, max_length=1024, validators=[validate_file_extension])
 
