@@ -19,14 +19,13 @@ def index_view(request):
 
 @login_required(login_url="login")
 def main_view(request):
-    subjects = Subject.objects.all().order_by("date_created")
+    subjects = Subject.objects.all().order_by("-date_created")
     context = {
         "subjects": subjects,
     }
     return render(request, 'cloud/main.html', context)
 
 
-@login_required(login_url="login")
 def login_view(request):
     """
     Login to the management platform

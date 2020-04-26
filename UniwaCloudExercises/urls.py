@@ -24,7 +24,7 @@ from UniwaCloudExercises import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.cloud.urls')),
-    path('', include('apps.subject.urls')),
+    path('subject/', include('apps.subject.urls')),
 ]
 
 handler404 = handler404
