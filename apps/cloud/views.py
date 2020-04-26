@@ -49,14 +49,8 @@ def login_view(request):
                 # Authenticate user if exists
                 auth_user = authenticate(email=email, password=password)
                 if auth_user is not None:
-                    if auth_user.is_superuser is not True:
-                        # If is super user
-                        messages.error(request, message="The requested user has not admin privileges")
-                        return redirect("login")
-                    else:
-                        # Creates session
-                        login(request, auth_user)
-                        return redirect("main")
+                    login(request, auth_user)
+                    return redirect("main")
                 else:
                     messages.error(request, message="Invalid Credentials, please try again")
             else:
